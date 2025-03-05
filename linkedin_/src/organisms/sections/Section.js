@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import HeaderCard from "../../molecules/headerCard/index";
 import CardContent from "../../molecules/cardContent/index";
-import Modal from "../../molecules/modal/index";
+import Modal from "../modal/index";
 import Button from "../../atoms/buttton/index";
 import ProfileContent from "../../molecules/profileContent/index";
 import AnalyticsSection from "../../molecules/analystSection/index";

@@ -25,7 +25,7 @@ function Form({ onSubmit, type, editingItem, Onclose, isopen, handlesubmit, hand
                             <Input
                                 key={field.name}
                                 name={field.name}
-                                classname={formerrors[field.name]?"eri":""}
+                                classname={formerrors[field.name]?"err":""}
                                 placeholder={field.placeholder}
                                 type={field.type}
                                 value={data[field.name] || ""}

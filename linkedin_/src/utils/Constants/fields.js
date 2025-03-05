@@ -1,6 +1,6 @@
 const FIELD_INFO = [
    {
-        id:"1",
+        id:"PROFILE_PIC",
         name: "profilePic",
         placeholder: "Profile Picture URL",
         type: "text",
@@ -11,7 +11,7 @@ const FIELD_INFO = [
         },
     },
       {
-        id:"2",
+        id:"NAME",
         name: "name",
         placeholder: "Full Name",
         type: "text",
@@ -24,7 +24,7 @@ const FIELD_INFO = [
     },
  {
 
-        id:"3",
+        id:"CONTACT",
         name: "contact",
         placeholder: "Contact Info",
         type: "text",
@@ -39,7 +39,7 @@ const FIELD_INFO = [
         },
     },
     {
-        id:"4",
+        id:"CONNECTIONS",
         name: "connections",
         placeholder: "Connections",
         type: "number",
@@ -51,7 +51,7 @@ const FIELD_INFO = [
         },
     },
   {
-        id:"5",
+        id:"COMPANY",
         name: "Company",
         placeholder: "Company Name",
         type: "text",
@@ -59,7 +59,7 @@ const FIELD_INFO = [
         validator: (value) => (!value ? "Company Name is * required field." : ""),
     },
   {
-        id:"6",
+        id:"POSITION",
         name: "Position",
         placeholder: "Position",
         type: "text",
@@ -67,7 +67,7 @@ const FIELD_INFO = [
         validator: (value) => (!value ? "Position is * required field." : ""),
     },
   {
-        id:"7",
+        id:"DESCRIPTION",
         name: "Description",
         placeholder: "Add description",
         type: "text",
@@ -75,7 +75,7 @@ const FIELD_INFO = [
         validator: (value) => (!value ? "Description is * required field." : ""),
     },
   {
-        id:"8",
+        id:"START_DATE",
         name: "StartDate",
         placeholder: "Start Date",
         type: "date",
@@ -83,7 +83,7 @@ const FIELD_INFO = [
         validator: (value) => (!value ? "Start Date is * required field." : ""),
     },
    {
-        id:"9",
+        id:"END_DATE",
         name: "EndDate",
         placeholder: "End Date",
         type: "date",
@@ -97,7 +97,7 @@ const FIELD_INFO = [
         },
     },
  {
-        id:"10",
+        id:"LOCATION",
         name: "Location",
         placeholder: "Location",
         type: "text",
@@ -105,49 +105,28 @@ const FIELD_INFO = [
         validator: (value) => (!value ? "Location is * required field." : ""),
     },
    {
-        id:"11",
+        id:"COLLEGE_NAME",
         name: "CollegeName",
         placeholder: "College Name",
         type: "text",
         validator: (value) => (!value ? "CollegeName is * required field." : ""),
     },
      {
-        id:"12",
+        id:"DEGREE",
         name: "Degree",
         placeholder: "degree",
         type: "text",
         validator: (value) => (!value ? "Degree is * required field." : ""),
     },
     {
-        id:"13",
+        id:"BRANCH",
         name: "Branch",
         placeholder: "Branch",
         type: "text",
         validator: (value) => (!value ? "Branch is * required field." : ""),
     },
-    {
-        id:"14",
-        name: "StartDate",
-        placeholder: "Start Date",
-        type: "date",
-        validator: (value) => (!value ? "Start Date is * required field." : ""),
-    },
-  {
-        id:"15",
-        name: "EndDate",
-        placeholder: "End Date",
-        type: "date",
-        validator: (value) => (!value ? "End Date is * required field." : ""),
-    },
    {
-    id:"16",
-        name: "Location",
-        placeholder: "Location",
-        type: "text",
-        validator: (value) => (!value ? "Location is * required field." : ""),
-    },
-   {
-        id:"17",
+        id:"SKILL_NAME",
         name: "SkillName",
         placeholder: "skillName",
         type: "text",
@@ -155,7 +134,7 @@ const FIELD_INFO = [
         validator: (value) => (!value ? "Skill Name is * required field." : ""),
     },
     {
-        id:"18",
+        id:"PROFICIENCY",
         name: "Proficiency",
         placeholder: "Beginner/Intermediate/ Advanced/Expert",
         type: "text",
@@ -167,7 +146,7 @@ const FIELD_INFO = [
         },
     },
     {
-        id:"19",
+        id:"METRIC",
         name: "metric",
         placeholder: "Analytics Metric",
         type: "text",
@@ -175,7 +154,7 @@ const FIELD_INFO = [
         validator: (value) => (!value ? "Analytics Metric is * required field." : ""),
     },
     {
-        id:"20",
+        id:"VALUE",
         name: "value",
         placeholder: "Value",
         type: "number",
