@@ -1,6 +1,6 @@
 import React  from "react";
-import NavbarRight from "./NavbarRight";
-import Navbarleft from "./Navbarleft";
+import NavbarRight from "./atoms/navBarRight/index";
+import Navbarleft from "./atoms/navBarLeft/index";
 import './navBar.css'
 function Navbar(){
     return  (

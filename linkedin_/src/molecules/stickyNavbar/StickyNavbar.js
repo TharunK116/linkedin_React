@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll"; 
-import SECTIONS from "../profileContent/Constants/sections";
+import SECTIONS from "../../utils/Constants/sections";
 import './StickyNavbar.css'
 function StickyNavbar() {
     const [activeSection, setActiveSection] = useState("");

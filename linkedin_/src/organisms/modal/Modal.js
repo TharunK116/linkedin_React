@@ -1,8 +1,8 @@
 import React from "react";
-import Form from "../form/index";
-import fieldInfo from "../profileContent/Constants/fieldInfo";
-import { useValidation } from "./validation";
-import { useFormData } from "../../hooks/useformData";
+import Form from "../../molecules/form/index";
+import fieldInfo from "../../utils/Constants/fields";
+import { useValidation } from "../../hooks/useValidation";
+import { useFormData } from "../../hooks/useFormData";
 import { getSection } from "../../utils/sectionUtils";
 import { createNewData } from "../../utils/addIdUtils";
 
