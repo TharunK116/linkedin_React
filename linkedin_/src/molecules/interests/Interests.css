@@ -1,0 +1,41 @@
+.tab-content{
+   display: flex;
+    width:400px;
+    padding: 10px;
+    flex-wrap: wrap;
+   
+}
+.logo {
+    width: 50px;
+    height: 50px;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-self: flex-start;
+}
+.company-info{
+    width:70%;
+}
+.btn-following{
+    
+    display: flex;
+    align-items: center;
+    gap:6px;
+    font-size: 16px;
+    color: gray;
+    border: 2px solid gray;
+
+}
+.btn-following i{
+    font-size: 16px;
+}
+.company-name{
+    font-size:20px;
+}
+.highlight{
+   text-decoration: underline;
+ 
+   font-weight:bold;
+    color:rgb(1,117,79);
+}

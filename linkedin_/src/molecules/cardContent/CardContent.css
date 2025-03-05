@@ -1,0 +1,15 @@
+.experience-item,
+.education-item,
+.skills-item,
+.analytics-item,
+.interests-item {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 10px 10px;
+    justify-content: space-between;
+}
+
+.experience-info {
+    flex-grow: 1;
+}

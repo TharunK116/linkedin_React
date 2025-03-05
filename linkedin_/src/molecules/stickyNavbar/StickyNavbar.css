@@ -1,0 +1,41 @@
+.sticky-navbar{
+ 
+  
+    position: fixed;
+    padding:2px 2px;
+    margin-top:20px;
+    width:150px;
+    display: flex;
+    justify-content: center;
+    height:500px;
+    margin-left:10px;
+   
+  }
+  .active-link{
+    background-color:rgb(116, 141, 166);
+   }
+
+  .sticky-navbar a{
+    text-decoration: none;
+    color:#00000099;
+  }
+  
+  .sticky-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .sticky-navbar ul li {
+    margin: 10px 0;
+    width:100%;
+    padding:10px 10px;
+    height:30px;
+  }
+  .sticky-navbar ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    
+    font-weight: 100;
+  }

@@ -1,0 +1,15 @@
+.analytics{
+    margin-left:10px;
+  }
+
+.analytics-detail{
+    display: flex;
+    
+   padding:10px 10px;
+    color:black;
+    background-color:white;
+    height: 200px;
+     
+  }
+ 
+  
