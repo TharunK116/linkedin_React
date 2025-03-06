@@ -1,34 +1,33 @@
-
 const SECTIONS = [
     {
         title: "Profile",
         type: "profile",
-        fieldIds: ["profilePic", "name", "contact", "connections"],
+        fieldIds: ["PROFILE_PIC", "NAME", "CONTACT", "CONNECTIONS"],
     },
     {
         title: "Experience",
         type: "experience",
-        fieldIds: ["Company", "Position", "Description", "StartDate", "EndDate", "Location"],
+        fieldIds: ["COMPANY", "POSITION", "DESCRIPTION", "START_DATE", "END_DATE", "LOCATION"],
     },
     {
         title: "Education",
         type: "education",
-        fieldIds: ["CollegeName", "Degree", "Branch", "StartDate", "EndDate", "Location"],
+        fieldIds: ["COLLEGE_NAME", "DEGREE", "BRANCH", "START_DATE", "END_DATE", "LOCATION"],
     },
     {
         title: "Skills",
         type: "skills",
-        fieldIds: ["SkillName", "Proficiency"],
+        fieldIds: ["SKILL_NAME", "PROFICIENCY"],
     },
     {
         title: "Analytics",
         type: "analytics",
-        fieldIds: ["metric", "value"],
+        fieldIds: ["METRIC", "VALUE"],
     },
     {
         title: "Interests",
         type: "interests",
-        fieldIds: ["skillName", "proficiency"],
+        fieldIds: ["SKILL_NAME", "PROFICIENCY"],
     },
 ];
 
