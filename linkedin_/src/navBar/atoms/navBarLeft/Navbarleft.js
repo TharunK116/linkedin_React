@@ -1,7 +1,7 @@
 
 import React from "react";
-import Icon from "../atoms/icon/index";
-import './navBar.css'
+import Icon from "../../../atoms/icon/index";
+import './NavBarleft.css'
 function Navbarleft(){
     return (
         <div className="nav-left">

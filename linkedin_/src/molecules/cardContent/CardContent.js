@@ -8,9 +8,6 @@ function CardContent({ type, data, onEdit }) {
 
     const sectionConfig = getSection(type);
     const fields = getFields(sectionConfig);
-   
-  
-
     return (
         <div className={`${type}-item `}>
 

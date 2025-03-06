@@ -3,11 +3,12 @@ import { useState, useEffect } from "react";
 export function useFormData(type, editingItem, sectionConfig, fieldInfo) {
     function initialData(editingItem) {
         return sectionConfig.fieldIds.reduce((acc, fieldId) => {
-            const fieldConfig = fieldInfo[fieldId];
+            const fieldConfig = fieldInfo.find((item)=>item.id===fieldId);
+          
             if (!fieldConfig) return acc;
             return {
                 ...acc,
-                [fieldConfig.name]: editingItem ? editingItem[fieldConfig.name] : "",
+                [fieldConfig.id]: editingItem ? editingItem[fieldConfig.name] : "",
             };
         }, {});
     }
@@ -23,6 +24,7 @@ export function useFormData(type, editingItem, sectionConfig, fieldInfo) {
     function handleChange(key, value) {
         setData((prevData) => ({
             ...prevData,
+            
             [key]: value,
         }));
     }

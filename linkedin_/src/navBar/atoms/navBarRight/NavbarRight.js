@@ -1,6 +1,6 @@
 
-import Icon from "../atoms/icon";
-import NAVBAR_ITEMS from "./Constants/Navbar_Items";
+import Icon from "../../../atoms/icon/index";
+import NAVBAR_ITEMS from "../../Constants/Navbar_Items";
 import React from "react";
 
 function NavbarRight(){
