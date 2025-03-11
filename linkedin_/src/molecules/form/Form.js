@@ -6,19 +6,28 @@ import { getFields } from "../../utils/sectionUtils";
 import { getSection } from "../../utils/sectionUtils";
 import './Form.css'
 
-function Form({ onSubmit, type, editingItem, Onclose, isopen, handlesubmit, handlechange, data, formerrors, handledelete }) {
+function Form({  type, editingItem, Onclose, handlesubmit, handlechange, data, formerrors, handledelete }) {
     const sectionConfig = getSection(type);
     const fields = getFields(sectionConfig);
-   console.log('errors');
-   console.log(formerrors);
     return (
         <div className="modal">
             <div className="modal-content">
                 <HeaderCard
+                 className="modal-header"
                     Tag="h2"
                     title={editingItem ? `Edit ${type}:` : `Add ${type}:`}
                     handleclick={Onclose}
                     classname="fa-solid fa-close"
+                    btnstyle={
+                        {
+                            padding:"0px 0px",
+                            margin:"0px 0px"
+                        }
+                    }
+                    style={{
+                       padding:"0px 0px",
+                        fontWeight: "bold"
+                    }}
                 />
                 <form className="modal-body" onSubmit={(e) => e.preventDefault()}>
                     {fields.map((field) => (
@@ -28,7 +37,7 @@ function Form({ onSubmit, type, editingItem, Onclose, isopen, handlesubmit, hand
                                 name={field.name}
                                 classname={formerrors[field.id]?"err":""}
                                 placeholder={field.placeholder}
-                                type={field.type}
+                                Type={field.type}
                                 value={data[field.id] || ""}
                                 onChange={(e) => handlechange(field.id, e.target.value)}
                                 required={field.required}
@@ -41,15 +50,15 @@ function Form({ onSubmit, type, editingItem, Onclose, isopen, handlesubmit, hand
                 </form>
                 <div>
                     <Button
-                        classname="btn"
-                        handleclick={() => handlesubmit(type, data)}
+                        classname="btn form-btn"
+                        handleclick={() => handlesubmit()}
                         type="submit"
                     >
                         {editingItem ? "Update" : "Add"}
                     </Button>
                     {editingItem && <Button
                         classname="btn"
-                        handleclick={() => handledelete(type, data)}
+                        handleclick={() => handledelete()}
                         type="submit"
                     >
                         Delete

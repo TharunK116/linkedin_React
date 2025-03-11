@@ -29,6 +29,12 @@ const SECTIONS = [
         type: "interests",
         fieldIds: ["SKILL_NAME", "PROFICIENCY"],
     },
+    {
+        title: "Activity",
+        type: "activity",
+        fieldIds:["POST"],
+       
+    },
 ];
 
 export default SECTIONS;

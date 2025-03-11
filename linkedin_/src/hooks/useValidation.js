@@ -17,10 +17,10 @@ export function useValidation(sectionConfig, fieldInfo) {
         const newErrors = {};
         sectionConfig.fieldIds.forEach((fieldId) => {
             const fieldConfig = fieldInfo.find((item)=>item.id===fieldId);
+           
             if (fieldConfig?.validator) {
                 
                 const errorMessage = fieldConfig.validator(data[fieldConfig.id]);
-               
                 if (errorMessage) {
                     newErrors[fieldConfig.id] = errorMessage;
                 }

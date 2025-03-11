@@ -9,8 +9,8 @@ function StickyNavbar() {
             <nav className="sticky-navbar">
                 <ul>
                     {SECTIONS.map((item) => (
-                        
-                        <li key={item.title} className={activeSection === item.title ? "active-link" : ""}>
+                        <a className={activeSection === item.title ? "active-link" : ""}>
+                        <li key={item.title}   >
                             <Link
                                 to={item.title}
                                 smooth={true} 
@@ -22,6 +22,7 @@ function StickyNavbar() {
                                 {item.title}
                             </Link>
                         </li>
+                        </a>
                     ))}
                 </ul>
             </nav>

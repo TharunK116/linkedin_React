@@ -3,7 +3,7 @@ const FIELD_INFO = [
         id:"PROFILE_PIC",
         name: "profilePic",
         placeholder: "Profile Picture URL",
-        type: "text",
+        type: "input",
         required: true,
         validator: (value) => {
             if (!value) return "Profile Picture URL is ** required field.";
@@ -14,11 +14,22 @@ const FIELD_INFO = [
         id:"NAME",
         name: "name",
         placeholder: "Full Name",
-        type: "text",
+        type: "input",
          field: true,
         validator: (value) => {
             if (!value) return "Full Name is * required field.";
             if (value.length < 2) return "Full Name must be at least 2 characters.";
+            return "";
+        },
+    },
+    {
+        id:"POST",
+        name: "Create Post",
+        placeholder: "Enter post description",
+        type: "textarea",
+        field: true,
+        validator: (value) => {
+            if (!value) return "Post cant be empty";
             return "";
         },
     },
@@ -27,7 +38,7 @@ const FIELD_INFO = [
         id:"CONTACT",
         name: "contact",
         placeholder: "Contact Info",
-        type: "text",
+        type: "input",
         required: true,
         validator: (value) => {
             if (!value) return "Contact Info is * required field.";
@@ -54,7 +65,7 @@ const FIELD_INFO = [
         id:"COMPANY",
         name: "Company",
         placeholder: "Company Name",
-        type: "text",
+        type: "input",
         required: true,
         validator: (value) => (!value ? "Company Name is * required field." : ""),
     },
@@ -62,7 +73,7 @@ const FIELD_INFO = [
         id:"POSITION",
         name: "Position",
         placeholder: "Position",
-        type: "text",
+        type: "input",
         required: true,
         validator: (value) => (!value ? "Position is * required field." : ""),
     },
@@ -70,7 +81,7 @@ const FIELD_INFO = [
         id:"DESCRIPTION",
         name: "Description",
         placeholder: "Add description",
-        type: "text",
+        type: "textarea",
         required: true,
         validator: (value) => (!value ? "Description is * required field." : ""),
     },
@@ -78,7 +89,7 @@ const FIELD_INFO = [
         id:"START_DATE",
         name: "StartDate",
         placeholder: "Start Date",
-        type: "date",
+        type:"date",
         required: true,
         validator: (value) => (!value ? "Start Date is * required field." : ""),
     },
@@ -100,7 +111,7 @@ const FIELD_INFO = [
         id:"LOCATION",
         name: "Location",
         placeholder: "Location",
-        type: "text",
+        type: "input",
         required: true,
         validator: (value) => (!value ? "Location is * required field." : ""),
     },
@@ -108,28 +119,28 @@ const FIELD_INFO = [
         id:"COLLEGE_NAME",
         name: "CollegeName",
         placeholder: "College Name",
-        type: "text",
+        type: "input",
         validator: (value) => (!value ? "CollegeName is * required field." : ""),
     },
      {
         id:"DEGREE",
         name: "Degree",
         placeholder: "degree",
-        type: "text",
+        type: "input",
         validator: (value) => (!value ? "Degree is * required field." : ""),
     },
     {
         id:"BRANCH",
         name: "Branch",
         placeholder: "Branch",
-        type: "text",
+        type: "input",
         validator: (value) => (!value ? "Branch is * required field." : ""),
     },
    {
         id:"SKILL_NAME",
         name: "SkillName",
         placeholder: "skillName",
-        type: "text",
+        type: "input",
         required: true,
         validator: (value) => (!value ? "Skill Name is * required field." : ""),
     },
@@ -137,7 +148,7 @@ const FIELD_INFO = [
         id:"PROFICIENCY",
         name: "Proficiency",
         placeholder: "Beginner/Intermediate/ Advanced/Expert",
-        type: "text",
+        type: "input",
         required: true,
         validator: (value) => {
             if (!value) return "Proficiency Level is * required field.";
@@ -149,7 +160,7 @@ const FIELD_INFO = [
         id:"METRIC",
         name: "metric",
         placeholder: "Analytics Metric",
-        type: "text",
+        type: "input",
         required: true,
         validator: (value) => (!value ? "Analytics Metric is * required field." : ""),
     },

@@ -10,9 +10,9 @@ import { createNewData } from "../../utils/addIdUtils";
 function Modal({ onSubmit, type, editingItem = null, Onclose, isopen, handlesubmit, handledelete }) {
 
     const sectionConfig = getSection(type);
-    const { data, handleChange } = useFormData(type, editingItem, sectionConfig, fieldInfo);
+    const { data, handleChange } = useFormData( editingItem, sectionConfig, fieldInfo);
    const { errors, setErrors, validateData, handleValidation } = useValidation(sectionConfig, fieldInfo);
-
+   
     function handlechange(key, value) {
         handleValidation(key, value);
         handleChange(key, value);
@@ -22,7 +22,7 @@ function Modal({ onSubmit, type, editingItem = null, Onclose, isopen, handlesubm
         return newData;
     }
    function handleModalSubmit() {
-    
+     
         const newErrors = validateData(data);
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);

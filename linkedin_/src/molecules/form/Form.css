@@ -1,5 +1,4 @@
 .modal {
-
   position: fixed;
   z-index: 1;
   left: 0px;
@@ -10,12 +9,15 @@
   font-size: 15px;
   background-color: rgba(0, 0, 0, 0.5);
 }
-
+.modal-header{
+  background: red;
+  padding: 0px 0px;
+}
 .modal-content {
   background-color: white;
   margin: 10% auto;
   padding: 20px;
-  width: 50%;
+  width:45%;
   height: auto;
   max-height: 600px;
   display: flex;
@@ -30,26 +32,28 @@
   flex-direction: column;
   overflow-y: auto;
   height: 100%;
+  width:100%;
 }
 
 .modal h2 {
   background-color: white;
-  padding: 10px 0;
   margin: 0;
-  font-size: 18px;  border-bottom: 1px solid #ccc;
+  font-size: 18px;  
+  border-bottom: 1px solid #ccc;
 }
 
 label {
   display: block;
   margin-top: 10px;
+  font-weight: bold;
 }
 
 input,
 select,
 textarea {
-  width: 90%;
+  
   padding: 10px 10px;
-  height: 15px;
+  font-weight: bold;
   margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -57,12 +61,8 @@ textarea {
 
 .error {
   color: red;
-  margin: 2px;
+  margin: 2px 2px;
   font-size: 12px;
+  font-weight: bold;
 
-}
-
-.err {
-  border: 1px solid red;
-  color: red;
 }

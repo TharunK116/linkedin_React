@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export function useFormData(type, editingItem, sectionConfig, fieldInfo) {
+export function useFormData( editingItem, sectionConfig, fieldInfo) {
     function initialData(editingItem) {
         return sectionConfig.fieldIds.reduce((acc, fieldId) => {
             const fieldConfig = fieldInfo.find((item)=>item.id===fieldId);

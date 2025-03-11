@@ -6,7 +6,8 @@ import { useUserData } from "../../hooks/useData";
 function SectionList() {
   
     const {item,handleEdit,userData,sections,handledelete,handlesubmit}= useUserData();
-
+    console.log('data');
+   console.log(userData);
     return (
 
         <div className="content">

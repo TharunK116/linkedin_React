@@ -2,8 +2,10 @@ import React, { Fragment, useState } from "react"
 import CONTENT from "./Constants/Content";
 import './Interests.css'
 import Button from "../../atoms/buttton";
+import HeaderCard from '../headerCard'
 import Icon from "../../atoms/icon";
-function Interests() {
+function Interests({title,info}) {
+   const CONTENT=info;
     let contentd = [];
     const [specific, setspecific] = useState(null);
     const[follow,setfollow]=useState('Follow');
@@ -11,7 +13,7 @@ function Interests() {
         setspecific(id);
     }
     function handleFollow(){
-        console.log('changing');
+       
         setfollow((prev)=>{
             if(prev==="Follow"){
                 return 'Following';
@@ -28,20 +30,25 @@ function Interests() {
 
 
     return (
-
-        <div className="types" >
-            
+    <> 
+       <HeaderCard title={title} ></HeaderCard>
+        <div id="Interests"  className="interests">
+            <div className="types" >
                 {CONTENT.map((item) => (
                     
                     <Button 
                         key={item.type}
                         handleclick={() => handleType(item.type)}
-                        classname={specific === item.type ? "highlight" : ""}
+                        classname={specific === item.type ? "highlight":"bt"}
+                        style={{
+                            borderRadius:"0px",
+                        }}
                     >
                         {item.type}
                     </Button>
                     
                 ))}
+                </div>
 
 
             <div id="people" className="tab-content">
@@ -55,9 +62,9 @@ function Interests() {
                             alt="Company Logo" className="logo" />
 
                         <div className="company-info">
-                            <p className="company-name">{item.name}</p>
+                            <h3 className="company-name">{item.name}</h3>
                             <p>{item.info}</p>
-                            <Button handleclick={handleFollow} classname="btn-following"><Icon classname="fa-solid fa-check"></Icon>{follow}</Button>
+                            <Button handleclick={handleFollow} classname="btn-following"><Icon classname={follow==='Following'?"fa-solid fa-check":"fa-solid fa-plus"}></Icon>{follow}</Button>
                         </div>
                     </Fragment>
                 ))
@@ -67,6 +74,7 @@ function Interests() {
 
 
         </div>
+        </>
     )
 
 }

@@ -13,7 +13,7 @@ function ProfileContent({ onEdit, info }) {
                         src={COVERIMG}
                         alt="Cover Photo" className="banner-img">
                     </img>
-                    <Button handleclick={onEdit} classname="p-edit-btn" id="p-edit-btn">
+                    <Button handleclick={onEdit} classname="p-edit-btn p-btn" id="p-edit-btn">
                         <Icon
                             classname="fa-solid fa-pencil">
                         </Icon>
@@ -35,7 +35,7 @@ function ProfileContent({ onEdit, info }) {
                         <p className="connections"><a href="#">{info.connections}</a></p>
                         <div className="profile-buttons">
                             {BUTTON_INFO.map((item) => (
-                                <Button key={item.classname} classname={item.classname}>{item.placeholder}</Button>
+                                <Button key={item.classname} classname={`${item.classname} `}>{item.placeholder}</Button>
                             ))
                             }
                         </div>
