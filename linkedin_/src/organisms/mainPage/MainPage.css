@@ -4,10 +4,10 @@
     gap:10px;
   } 
   .container{
-    margin-top:80px;
+   
     margin-left:160px;
    padding-top: 62px;
-    margin-right:10px;
+    margin-right:0px;
     overflow-x: hidden;
     flex-grow: 1;
   }

@@ -1,15 +1,19 @@
 
-function Input({ name, type, value, placeholder, onChange, children,classname }) {
+function Input({ name, Type, value, placeholder, onChange, children,classname }) {
+   
  return (
         <>
             <label>
                 {name}:
             </label>
 
-            <input className={classname} onChange={onChange} value={value} type={type} placeholder={`${placeholder}`}>
+        { Type==='textarea'?<Type className={classname} onChange={onChange} rows="4" cols="5" value={value} type={Type} placeholder={`${placeholder}`}> </Type>
+        : <input className={classname} onChange={onChange} value={value} type={Type} placeholder={`${placeholder}`}>
             </input>
-            {children}
-        </>
+    
+    }
+     {children}
+     </>
     )
 }
 export default Input;

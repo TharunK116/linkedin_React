@@ -6,7 +6,10 @@ import './AnalystSection.css'
 function AnalyticsSection({ info }) {
     return (
         <>
-            <HeaderCard title={"Analytics"} />
+            <HeaderCard title={"Analytics"}>
+            
+            </HeaderCard>
+            <span className='analytics-sub'><i className="fa-solid fa-eye"></i>Private to you</span>   
             <div id="Analytics" className="analytics-detail ">
 
                 {info.map((info) => (

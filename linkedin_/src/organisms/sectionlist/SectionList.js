@@ -1,12 +1,13 @@
 
 import React, { useState } from "react";
-import Section from "./Section";
+import Section from "../sections/Section";
 import { useUserData } from "../../hooks/useData";
 
 function SectionList() {
   
     const {item,handleEdit,userData,sections,handledelete,handlesubmit}= useUserData();
-
+    console.log('data');
+   console.log(userData);
     return (
 
         <div className="content">

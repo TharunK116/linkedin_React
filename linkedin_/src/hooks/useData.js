@@ -12,6 +12,7 @@ export function useUserData() {
         { title: "Skills", type: "skills", data: userData.skills},
         { title: "Analytics", type: "analytics", data: userData.analytics},
         { title: "Interests", type: "interests", data: userData.interests},
+        { title: "Activity", type: "activity", data:userData.activity},
     ];
 
     function updateProfile(data) {
@@ -31,6 +32,8 @@ export function useUserData() {
     }
 
     function addItem(type, data) {
+        console.log(data);
+        console.log(type);
         setUserData((prevData) => ({
             ...prevData,
             [type]: [...prevData[type], data],
@@ -46,7 +49,8 @@ export function useUserData() {
     }
 
     function handlesubmit(type, data) {
-        console.log('handling');
+
+       
         if (type === "profile") {
             updateProfile(data);
         } else if (item) {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll"; 
-import SECTIONS from "../profileContent/Constants/sections";
+import SECTIONS from "../../utils/Constants/sections";
 import './StickyNavbar.css'
 function StickyNavbar() {
     const [activeSection, setActiveSection] = useState("");
@@ -9,8 +9,8 @@ function StickyNavbar() {
             <nav className="sticky-navbar">
                 <ul>
                     {SECTIONS.map((item) => (
-                        
-                        <li key={item.title} className={activeSection === item.title ? "active-link" : ""}>
+                        <a className={activeSection === item.title ? "active-link" : ""}>
+                        <li key={item.title}   >
                             <Link
                                 to={item.title}
                                 smooth={true} 
@@ -22,6 +22,7 @@ function StickyNavbar() {
                                 {item.title}
                             </Link>
                         </li>
+                        </a>
                     ))}
                 </ul>
             </nav>

@@ -1,7 +1,7 @@
 import React from "react";
-import Form from "../form/index";
-import fieldInfo from "../profileContent/Constants/fieldInfo";
-import { useValidation } from "./validation";
+import Form from "../../molecules/form/index";
+import fieldInfo from "../../utils/Constants/fields";
+import { useValidation } from "../../hooks/useValidation";
 import { useFormData } from "../../hooks/useFormData";
 import { getSection } from "../../utils/sectionUtils";
 import { createNewData } from "../../utils/addIdUtils";
@@ -10,9 +10,9 @@ import { createNewData } from "../../utils/addIdUtils";
 function Modal({ onSubmit, type, editingItem = null, Onclose, isopen, handlesubmit, handledelete }) {
 
     const sectionConfig = getSection(type);
-    const { data, handleChange } = useFormData(type, editingItem, sectionConfig, fieldInfo);
+    const { data, handleChange } = useFormData( editingItem, sectionConfig, fieldInfo);
    const { errors, setErrors, validateData, handleValidation } = useValidation(sectionConfig, fieldInfo);
-
+   
     function handlechange(key, value) {
         handleValidation(key, value);
         handleChange(key, value);
@@ -22,7 +22,7 @@ function Modal({ onSubmit, type, editingItem = null, Onclose, isopen, handlesubm
         return newData;
     }
    function handleModalSubmit() {
-    
+     
         const newErrors = validateData(data);
         if (Object.keys(newErrors).length > 0) {
             setErrors(newErrors);
