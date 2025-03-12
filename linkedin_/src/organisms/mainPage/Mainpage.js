@@ -1,14 +1,14 @@
 import React from "react";
 import StickyNavbar from "../../molecules/stickyNavbar/index";
-import SectionList from "../sectionlist/index";
-
+import SectionContainer from "../sectionContainer/SectionContainer";
 import './MainPage.css'
+
 function Mainpage() {
     return (
         <div className="ProfilePage">
             <StickyNavbar />
             <div className="container">
-                <SectionList />
+                <SectionContainer />
             </div>
         </div>
     )

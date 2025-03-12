@@ -1,19 +1,19 @@
 import React from "react";
-import Button from "../../atoms/buttton/index";
-import Icon from "../../atoms/icon/index";
+import Button from "../../atoms/buttton";
+import Icon from "../../atoms/icon";
 import COVERIMG from "./Constants/profileContent.links";
 import './ProfileContent.css'
 import BUTTON_INFO from "./Constants/buttonInfo";
-function ProfileContent({ onEdit, info }) {
+function ProfileContent({ onEditBtnClick, info }) {
     return (
-        <>
+      
             <div id="Profile" className="profile-container">
                 <div className="banner">
                     <img
                         src={COVERIMG}
-                        alt="Cover Photo" className="banner-img">
+                        alt="CoverPhoto" className="banner-img">
                     </img>
-                    <Button handleclick={onEdit} classname="p-edit-btn p-btn" id="p-edit-btn">
+                    <Button handleclick={onEditBtnClick} classname="p-edit-btn p-btn" id="p-edit-btn">
                         <Icon
                             classname="fa-solid fa-pencil">
                         </Icon>
@@ -43,7 +43,7 @@ function ProfileContent({ onEdit, info }) {
                 </div>
 
             </div>
-        </>
+       
     )
 }
 

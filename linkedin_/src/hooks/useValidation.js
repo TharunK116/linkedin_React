@@ -2,18 +2,18 @@ import { useState,useEffect } from "react";
 
 export function useValidation(sectionConfig, fieldInfo) {
 
-    function handleValidation(key, value) {
+    function handleInputValidation(key, value) {
         const fieldConfig = fieldInfo.find((item)=>item.id===key);
         if (fieldConfig && fieldConfig.validator) {
             const errorMessage = fieldConfig.validator(value);
-            setErrors((prevErrors) => ({
+            setFormErrors((prevErrors) => ({
                 ...prevErrors,
                 [key]: errorMessage,
             }));
         }
     }
     
-    function validateData(data) {
+    function handleFormValidation(data) {
         const newErrors = {};
         sectionConfig.fieldIds.forEach((fieldId) => {
             const fieldConfig = fieldInfo.find((item)=>item.id===fieldId);
@@ -36,9 +36,9 @@ export function useValidation(sectionConfig, fieldInfo) {
 
         return newErrors;
     }
-    const [errors, setErrors] = useState({});
+    const [formErrors, setFormErrors] = useState({});
 
    
 
-    return { errors, setErrors, validateData, handleValidation };
+    return { formErrors, setFormErrors, handleFormValidation, handleInputValidation };
 }

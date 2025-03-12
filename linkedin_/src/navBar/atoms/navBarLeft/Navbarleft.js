@@ -1,6 +1,7 @@
 
 import React from "react";
-import Icon from "../../../atoms/icon/index";
+import Icon from "../../../atoms/icon";
+import Input from "../../../atoms/input";
 import './NavBarleft.css'
 function Navbarleft(){
     return (
@@ -11,7 +12,7 @@ function Navbarleft(){
         </div>
         <div className="searchbar">
             <Icon classname="fa-solid fa-magnifying-glass "></Icon>
-            <input
+            <Input
                type="text"
                 name="Search"
                 id="Searchbar"

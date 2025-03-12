@@ -1,61 +1,57 @@
 import React from "react";
-import Form from "../../molecules/form/index";
+import Form from "../../molecules/form";
 import fieldInfo from "../../utils/Constants/fields";
 import { useValidation } from "../../hooks/useValidation";
 import { useFormData } from "../../hooks/useFormData";
 import { getSection } from "../../utils/sectionUtils";
 import { createNewData } from "../../utils/addIdUtils";
+import { useModalContext } from "../sectionContainer/SectionContainer";
 
-
-function Modal({ onSubmit, type, editingItem = null, Onclose, isopen, handlesubmit, handledelete }) {
-
-    const sectionConfig = getSection(type);
-    const { data, handleChange } = useFormData( editingItem, sectionConfig, fieldInfo);
-   const { errors, setErrors, validateData, handleValidation } = useValidation(sectionConfig, fieldInfo);
+function Modal(props) {
    
-    function handlechange(key, value) {
-        handleValidation(key, value);
+    const {type,onModalClose}=props;
+    const {handleInfoDelete,handleFormSubmit,editingItem}=useModalContext();
+    const sectionConfig = getSection(type);
+    const { formData, handleChange } = useFormData( editingItem, sectionConfig, fieldInfo);
+    const { formErrors, setFormErrors, handleFormValidation, handleInputValidation } = useValidation(sectionConfig, fieldInfo);
+   
+    function handleFormInputChange(key,value) {
+        handleInputValidation(key, value);
         handleChange(key, value);
     }
-    function addData(data){
-        const newData = editingItem ? data : createNewData(data);
+    function addData(formData){
+        const newData = editingItem ? formData : createNewData(formData);
         return newData;
     }
-   function handleModalSubmit() {
-     
-        const newErrors = validateData(data);
+   function  onFormSubmit() { 
+        const newErrors =handleFormValidation(formData);
         if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors);
+            setFormErrors(newErrors);
             return;
         }
-        const newData = addData(data);
-        
-        handlesubmit(type, newData);
-        Onclose();
+        const newData = addData(formData);
+        handleFormSubmit(type, newData);
+        onModalClose();
     }
-
-    function handleDeleteItem() {
-        handledelete(type, data);
-        Onclose();
+    function onDeleteItem() {
+        handleInfoDelete(type, formData);
+        onModalClose();
     }
 
     return (
-        ( isopen && 
+       
            (
             <Form
-                onSubmit={onSubmit}
-                type={type}
-                editingItem={editingItem}
-                Onclose={Onclose}
-                isopen={isopen}
-                data={data}
-                formerrors={errors}
-                handlechange={handlechange}
-                handledelete={handleDeleteItem}
-                handlesubmit={handleModalSubmit}
+                sectionType={type}
+                formData={formData}
+                formErrors={formErrors}
+                onCloseBtnClick={onModalClose}
+                onFormInputChange={handleFormInputChange}
+                onDeleteBtnClick={onDeleteItem}
+                onSubmitBtnClick={onFormSubmit}
             >
             </Form>
-           )
+          
         )
     );
 }

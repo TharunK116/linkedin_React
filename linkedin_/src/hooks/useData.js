@@ -2,7 +2,7 @@ import { useState } from "react";
 import UserData from "../organisms/UserData";
 
 export function useUserData() {
-    const [item, setEditingItem] = useState(null);
+    const [editingItem, setEditingItem] = useState(null);
     const [userData, setUserData] = useState(UserData);
 
     const sections = [
@@ -32,46 +32,43 @@ export function useUserData() {
     }
 
     function addItem(type, data) {
-        console.log(data);
-        console.log(type);
+       
         setUserData((prevData) => ({
             ...prevData,
             [type]: [...prevData[type], data],
         }));
     }
 
-    function handledelete(type, data) {
+    function handleInfoDelete(type, data) {
         setUserData((prevData) => ({
             ...prevData,
             [type]: prevData[type].filter((item) => item.id !== data.id),
         }));
-        handleEdit(null);
+        handleEditItem(null);
     }
 
-    function handlesubmit(type, data) {
-
-       
+    function handleFormSubmit(type, data) {
         if (type === "profile") {
             updateProfile(data);
-        } else if (item) {
+        } else if (editingItem) {
             updateList(type, data);
         } else {
             addItem(type, data);
         }
 
-        handleEdit(null);
+        handleEditItem(null);
     }
 
-    function handleEdit(item) {
+    function handleEditItem(item) {
+       
         setEditingItem(item);
     }
-
     return {
-        item,
+        editingItem,
         userData,
         sections,
-        handlesubmit,
-        handleEdit,
-        handledelete,
+        handleFormSubmit,
+        handleEditItem,
+        handleInfoDelete,
     };
 }

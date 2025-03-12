@@ -1,21 +1,21 @@
 import { useState } from "react";
 
 export function useModal(handleEdit) {
-    const [open, setOpen] = useState(false);
+    const [isModalOpen,  setisModalOpen] = useState(false);
     
-    function onAdd() {
-        setOpen(true);
+    function  handleAddBtnClick() {
+        setisModalOpen(true);
     }
 
-    function onClose() {
-        setOpen(false);
+    function handleModalClose() {
+        setisModalOpen(false);
         handleEdit(null);
     }
 
-    function editHandler(item) {
-        setOpen(true);
+    function handleEditBtnClick(item) {
+        setisModalOpen(true);
         handleEdit(item);
     }
 
-    return { open, onAdd, onClose, editHandler };
+    return { isModalOpen, handleAddBtnClick, handleModalClose, handleEditBtnClick};
 }

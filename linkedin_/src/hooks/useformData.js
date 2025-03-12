@@ -13,21 +13,21 @@ export function useFormData( editingItem, sectionConfig, fieldInfo) {
         }, {});
     }
 
-    const [data, setData] = useState(initialData(editingItem));
+    const [formData, setFormData] = useState(initialData(editingItem));
 
     useEffect(() => {
         if (editingItem != null) {
-            setData(editingItem);
+            setFormData(editingItem);
         }
     }, [editingItem]);
 
     function handleChange(key, value) {
-        setData((prevData) => ({
+        setFormData((prevData) => ({
             ...prevData,
             
             [key]: value,
         }));
     }
 
-    return { data, setData, handleChange };
+    return { formData, setFormData, handleChange };
 }

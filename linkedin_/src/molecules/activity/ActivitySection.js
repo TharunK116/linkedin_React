@@ -1,6 +1,6 @@
 import React from "react";
 import './ActivitySection.css';
-import HeaderCard from "../headerCard/index";
+import HeaderCard from "../headerCard";
 import { Button } from "react-scroll";
 
 export default function ActivitySection({ info, title, handleclick }) {

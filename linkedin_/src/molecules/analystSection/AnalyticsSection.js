@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderCard from "../headerCard/Headercard";
-import Button from "../../atoms/buttton/index";
-import Icon from "../../atoms/icon/index";
+import Button from "../../atoms/buttton";
+import Icon from "../../atoms/icon";
 import './AnalystSection.css'
 function AnalyticsSection({ info }) {
     return (
